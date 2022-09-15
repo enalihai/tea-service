@@ -7,9 +7,9 @@ RSpec.describe Tea do
   end
 
   context 'validations' do
-    it { should_validate_presence_of :title }
-    it { should_validate_presence_of :description }
-    it { should_validate_presence_of :temperature }
-    it { should_validate_presence_of :brew_time }
+    it { should validate_presence_of :title }
+    it { should validate_presence_of :description }
+    it { should validate_presence_of :temperature }
+    it { should validate_presence_of :brew_time }
   end
 end 
