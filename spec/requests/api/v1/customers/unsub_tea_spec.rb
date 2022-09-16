@@ -9,13 +9,14 @@ RSpec.describe "Usubscribing from a Tea Subscription" do
         tea_id: tea.id,
         frequency: 'yearly',
         price: 12000,
-        title: "#{tea.title} = yearly sub for #{customer.first_name}",
+        title: "A Tea Sub",
         status: 'active'
       )
 
       sub_to_cancel = Subscription.all.last
       
-      patch "/api/v1/customers/#{customer.id}/subscriptions/#{sub_to_cancel.id}"
+      patch "/api/v1/customers/#{customer.id}/subscriptions/#{sub_to_cancel.id}",
+        params: ({status: 'cancelled'})
 
       expect(response).to be_successful
       expect(response).to have_http_status 202
