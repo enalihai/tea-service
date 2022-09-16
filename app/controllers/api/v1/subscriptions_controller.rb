@@ -24,7 +24,6 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def parse_json
-    binding.pry
     @input = JSON.parse(request.body.read, symbolize_names: true)
   end
 
