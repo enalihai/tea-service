@@ -43,15 +43,16 @@ The purpose of this takehome challenge is to create endpoints for a Front End te
 
 ## Project Schema  
 ![tea_db](https://user-images.githubusercontent.com/5219578/190591152-4578d925-39e5-4da3-bbc4-abc008477ec9.png)
-- I decided to use Subscriptions as the connection between customers and tea, instead of having multiple joins tables, I was able to use a minimal database to accomplish my task.
+- I decided to use Subscriptions as the connection between customers and tea, instead of having multiple joins tables, I was able to use a minimal database to accomplish my task.  
 
+## SimpleCov Testing  
+![simplecov](https://user-images.githubusercontent.com/5219578/190598508-5f9cf34b-7152-495c-86a4-8fdaf3f41fa3.png)
 ## Project Local Setup
 - fork then clone the `tea-service repository`  
 - move into the directory by entering `cd tea-service`  
 - install the gemfile with `bundle install`  
 - setup the database with `rails db:{create,migrate,seed}`  
 - start your server with `rails s` it is setup to be run on `localhost:3000`  
-
 
 ## Endpoints  
  ___
