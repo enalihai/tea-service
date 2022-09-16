@@ -1,6 +1,6 @@
 class Api::V1::SubscriptionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-  before_action :parse_json, :validate_frequency
+  before_action :no_nil, :parse_json, :validate_frequency
   
   def index
     customer = Customer.find(params[:customer_id])
@@ -18,6 +18,12 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
   
   private
+
+  def no_nil
+    if request.body.read == ""
+      return {'error': 'cant be nil'}, status: 422
+    end
+  end
 
   def record_not_found
     render json: { 'error': 'invalid input'}, status: 404
