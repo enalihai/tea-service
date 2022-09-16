@@ -23,7 +23,7 @@ RSpec.describe 'Subscribing to a Tea' do
       expect(subscription_data[:data][:id]).to be_a String
       
       expect(subscription_data[:data]).to have_key :type
-      expect(subscription_data[:data][:type].to eq 'subscription'
+      expect(subscription_data[:data][:type]).to eq 'subscription'
 
       expect(subscription_data[:data]).to have_key :attributes
       expect(subscription_data[:data][:attributes]).to be_a Hash 
@@ -40,5 +40,5 @@ RSpec.describe 'Subscribing to a Tea' do
 
   context 'unsuccessfully' do
     it 'returns 404'
-
+  end
 end
