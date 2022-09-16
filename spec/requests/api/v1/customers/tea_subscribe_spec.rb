@@ -6,13 +6,13 @@ RSpec.describe 'Subscribing to a Tea' do
       customer = FactoryBot.create(:customer)
       tea = FactoryBot.create(:tea)
 
-      headers = {'CONTENT_TYPE' => 'application/json'}
-      params = JSON.generate({tea_id: tea.id, frequency: 'yearly' })
-
-      post "/api/v1/customers/#{customer.id}/subscriptions"
       
+      post "/api/v1/customers/#{customer.id}/subscriptions",
+        headers: {'Content-Type': 'application/json'},
+        params: JSON.generate({tea_id: tea.id, frequency: 'yearly' })
+
       expect(response).to be_successful
-      expect(response).to have_status 201
+      expect(response).to have_http_status 201
 
       subscription_data = JSON.parse(response.body, symbolize_names: true)
       
@@ -30,7 +30,10 @@ RSpec.describe 'Subscribing to a Tea' do
 
       subscription_info = subscription_data[:data][:attributes]
 
-      expect(subscription_info).to have_keys :title, :price, :frequency, :status
+      expect(subscription_info).to have_key :title
+      expect(subscription_info).to have_key :price
+      expect(subscription_info).to have_key :frequency
+      expect(subscription_info).to have_key :status
       expect(subscription_info[:title]).to be_a String
       expect(subscription_info[:price]).to be_a Integer
       expect(subscription_info[:frequency]).to eq 'yearly'
