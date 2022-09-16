@@ -18,7 +18,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     cancelled_sub = Subscription.find(params[:id])
     cancelled_sub.status = 'cancelled'
     cancelled_sub.save
-
+binding.pry
     render json: Api::V1::SubscriptionSerializer.sub_json(cancelled_sub), status: 202
   end
 
