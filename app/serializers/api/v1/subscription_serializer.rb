@@ -13,4 +13,21 @@ class Api::V1::SubscriptionSerializer
       }
     }
   end
+
+  def self.list_all(subs)
+    {
+      data: subs.map do |subscribe|
+        {
+          id: subscribe.id.to_s,
+          type: 'subscription',
+          attributes: {
+            title: subscribe.title,
+            price: subscribe.price,
+            frequency: subscribe.frequency,
+            status: subscribe.status
+          }
+        }
+      end
+    }
+  end
 end
