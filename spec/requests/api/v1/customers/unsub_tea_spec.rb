@@ -32,12 +32,13 @@ RSpec.describe "Usubscribing from a Tea Subscription" do
       expect(json_response[:data][:attributes]).to be_a Hash
 
       attributes = json_response[:data][:attributes]
+
       expect(attributes).to have_key :title
       expect(attributes[:title]).to be_a String
       expect(attributes).to have_key :price
       expect(attributes[:price]).to be_a Integer
       expect(attributes).to have_key :frequency
-      expect(attributes[:frequency].to eq 'yearly'
+      expect(attributes[:frequency]).to eq 'yearly'
       expect(attributes).to have_key :status
       expect(attributes[:status]).to eq 'cancelled'
     end
