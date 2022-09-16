@@ -1,5 +1,5 @@
 class Api::V1::SubscriptionsController < ApplicationController
-  before_action :no_nil, :validate_frequency
+  before_action :validate_frequency
   
   def index
     customer = Customer.find(params[:customer_id])
@@ -29,10 +29,6 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   private
-
-  def record_not_found
-    render json: { 'error': 'invalid input'}, status: 404
-  end
 
   def validate_frequency
     input = JSON.parse(request.body.read, symbolize_names: true)
