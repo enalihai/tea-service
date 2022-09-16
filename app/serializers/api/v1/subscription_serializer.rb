@@ -1,5 +1,5 @@
 class Api::V1::SubscriptionSerializer
-  def self.sub_json(new_sub)
+  def self.sub_data(new_sub)
     {
       data: {
         id: new_sub.id.to_s,
