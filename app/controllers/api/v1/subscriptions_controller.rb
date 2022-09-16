@@ -11,6 +11,17 @@ class Api::V1::SubscriptionsController < ApplicationController
     render json: Api::V1::SubscriptionSerializer.sub_json(new_sub), status: 201
   end
   
+  def update
+    customer = Customer.find(params[:customer_id])
+    tea = Tea.find(@input[:tea_id])
+
+    cancelled_sub = Subscription.find(params[:id])
+    cancelled_sub.status = 'cancelled'
+    cancelled_sub.save
+
+    render json: Api::V1::SubscriptionSerializer.sub_json(cancelled_sub), status: 202
+  end
+
   private
 
   # def record_not_found

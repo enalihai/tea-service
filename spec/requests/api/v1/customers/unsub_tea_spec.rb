@@ -14,7 +14,7 @@ RSpec.describe "Usubscribing from a Tea Subscription" do
       )
 
       sub_to_cancel = Subscription.all.last
-
+      
       patch "/api/v1/customers/#{customer.id}/subscriptions/#{sub_to_cancel.id}"
 
       expect(response).to be_successful

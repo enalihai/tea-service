@@ -28,4 +28,15 @@ class Subscription < ApplicationRecord
 
     new(new_subscription_hash)
   end
+
+  def self.get_frequency_price(frequency)
+    if frequency == 'weekly'
+      400
+    elsif frequency == 'monthly'
+      1100
+    elsif frequency == 'yearly'
+      12000
+    else
+    end
+  end
 end

@@ -29,5 +29,22 @@ RSpec.describe Subscription do
       expect(subscription.frequency).to eq 'yearly'
       expect(subscription.status).to eq 'active'
     end 
+
+    context ".get_frequency_price returns price for frequency" do
+      it 'gets weekly' do
+        price = Subscription.get_frequency_price('weekly')
+        expect(price).to eq 400
+      end 
+      
+      it 'gets monthly' do
+        price = Subscription.get_frequency_price('monthly')
+        expect(price).to eq 1100
+      end
+
+      it 'gets yearly' do
+        price = Subscription.get_frequency_price('yearly')
+        expect(price).to eq 12000
+      end
+    end
   end 
 end 
