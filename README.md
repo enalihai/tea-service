@@ -1,24 +1,28 @@
-# README
+# Tea Service API  
+Thank you for visiting my Tea Service API. This is a takehome challenge given by Turing School of Software and Design.  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The purpose of this takehome challenge is to create endpoints for a Front End team to consume.  
 
-Things you may want to cover:
+## Expected Endpoints  
+1. Subscribe a Customer to a Tea Subscription
+2. Cancel a Customer's Tea Subscription
+3. See all of a Customer's Subscriptions both active and cancelled
 
-* Ruby version
 
-* System dependencies
+## Project Constraints  
+- 8 hours to create 3 endpoints
 
-* Configuration
+- Clear Documentation
 
-* Database creation
+- Project Boards Used  
 
-* Database initialization
+- Restful Routes only  
 
-* How to run the test suite
+- Full TDD  
 
-* Services (job queues, cache servers, search engines, etc.)
+- Explain OOP design descions  
 
-* Deployment instructions
+## Project Schema  
+- I decided to use Subscriptions as the connection between customers and tea, instead of having multiple joins tables, I was able to use a minimal database to accomplish my task.
 
-* ...
+
