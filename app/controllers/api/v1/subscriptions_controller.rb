@@ -1,6 +1,12 @@
 class Api::V1::SubscriptionsController < ApplicationController
-  # rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   before_action :parse_json, :validate_frequency
+  
+  def index
+    customer = Customer.find(params[:customer_id])
+
+    render json: Api::V1::SubscriptionSerializer.list_all(customer.subscriptions)
+  end
 
   def create
     customer = Customer.find(params[:customer_id])
@@ -13,9 +19,9 @@ class Api::V1::SubscriptionsController < ApplicationController
   
   private
 
-  # def record_not_found
-  #   render json: { 'error': 'invalid input'}, status: 404
-  # end
+  def record_not_found
+    render json: { 'error': 'invalid input'}, status: 404
+  end
 
   def parse_json
     @input = JSON.parse(request.body.read, symbolize_names: true)
