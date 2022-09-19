@@ -1,5 +1,5 @@
 class Api::V1::SubscriptionsController < ApplicationController
-  before_action :validate_frequency
+  before_action :validate_frequency, only: [:create]
   
   def index
     customer = Customer.find(params[:customer_id])
@@ -20,7 +20,6 @@ class Api::V1::SubscriptionsController < ApplicationController
   def update
     customer = Customer.find(params[:customer_id])
     input = JSON.parse(request.body.read, symbolize_names: true)
-    tea = Tea.find(input[:tea_id])
 
     cancelled_sub = Subscription.find(params[:id])
     cancelled_sub.status = 'cancelled'
