@@ -45,6 +45,8 @@ The purpose of this takehome challenge is to create endpoints for a Front End te
 ![tea_db](https://user-images.githubusercontent.com/5219578/190591152-4578d925-39e5-4da3-bbc4-abc008477ec9.png)
 - I decided to use Subscriptions as the connection between customers and tea, instead of having multiple joins tables, I was able to use a minimal database to accomplish my task.  
 
+## Seeded Database Setup  
+![seedfile](https://user-images.githubusercontent.com/5219578/191053237-7067171a-0200-4efc-b5d4-afe6a7780fb1.png)
 ## SimpleCov Testing  
 ![simplecov](https://user-images.githubusercontent.com/5219578/190598508-5f9cf34b-7152-495c-86a4-8fdaf3f41fa3.png)
 ## Project Local Setup
