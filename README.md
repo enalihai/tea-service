@@ -59,11 +59,11 @@ The purpose of this takehome challenge is to create endpoints for a Front End te
 ## Continuous Integration
 - I decided to use CircleCI for my project to make sure that my PR would not muddle my existing code. After each check that was green, I knew my code was good to deploy.  
 ![circleCI](https://user-images.githubusercontent.com/5219578/191060583-ea4f50f5-c20c-4735-a225-b708c83a2a00.png)
-## Endpoints  
+# Endpoints  
  ___
  `POST /api/v1/customers/1/subscriptions`  
  Sending a POST request to the endpoint, will create and save a JSON response for the FE team.
- #### POST returns  
+ ## POST returns  
 
  ![postreq](https://user-images.githubusercontent.com/5219578/191058578-5a518f41-5388-406f-96ec-88cec1555737.png)  
 
@@ -86,7 +86,7 @@ The purpose of this takehome challenge is to create endpoints for a Front End te
 ___
 `PATCH /api/v1/customers/1/subscriptions/1`  
 Sending a PATCH request, will update the customers subscription to either active or cancelled.
-#### PATCH returns  
+## PATCH returns  
 
 ![patchreq](https://user-images.githubusercontent.com/5219578/191058559-3989b46d-89e6-4e2e-9c8a-51e93d77c384.png)  
 
@@ -110,7 +110,7 @@ Sending a PATCH request, will update the customers subscription to either active
 ___  
 `GET /api/v1/customers/1/subscriptions`  
  Sending a GET request to the endpoint, will return the proper JSON response. 
-#### GET returns  
+## GET returns  
 
 ![getreq](https://user-images.githubusercontent.com/5219578/191058542-61f50f22-748d-4a06-99f3-91774e5d3f88.png)  
 
@@ -141,4 +141,34 @@ ___
     }
   ]
 }
-```
+```  
+
+# If I were to attempt...  
+
+## Outside Tea API Consumption  
+If I were to consume the API information for individual teas, I would go through this path.
+
+- Create a Service for the Tea using the Faraday Gem.
+- Create a Facade to properly format the request with a Poro.
+- Save the Tea that is requested to the Customers list.
+- I would not save the data to my own database.
+- I would build out an error serializer method for tea in cases where the API is not available.
+- I would format the Tea API JSON to fit my input and I would create a Tea controller and model. 
+- I believe this would fully consume the API for our purposes.  
+
+## Implement CORS
+
+CORS is actually not very difficult to introduce to your codebase.
+
+- gem 'rack-cors' is preloaded into the ruby gemfile
+- uncomment it  
+- add config code to helper files  
+- push to database  
+
+## Continuous Deployment  
+
+I would utilize Heroku or another free to deploy service.  
+
+- Setup database on Heroku and connect it with my code.  
+- Allow for Github CD in the settings menu.  
+- Continue to Monitor it when uploading new code to the main branch. 

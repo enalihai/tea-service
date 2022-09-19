@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Usubscribing from a Tea Subscription" do
   context 'successfully unsubscribes the customer' do
-    it 'returns a JSON package to the request' do
+    xit 'returns a JSON package to the request' do
       customer = FactoryBot.create(:customer)
       tea = FactoryBot.create(:tea)
       customer.subscriptions.create!(
