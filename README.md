@@ -45,6 +45,8 @@ The purpose of this takehome challenge is to create endpoints for a Front End te
 ![tea_db](https://user-images.githubusercontent.com/5219578/190591152-4578d925-39e5-4da3-bbc4-abc008477ec9.png)
 - I decided to use Subscriptions as the connection between customers and tea, instead of having multiple joins tables, I was able to use a minimal database to accomplish my task.  
 
+## Seeded Database Setup  
+![seedfile](https://user-images.githubusercontent.com/5219578/191053237-7067171a-0200-4efc-b5d4-afe6a7780fb1.png)
 ## SimpleCov Testing  
 ![simplecov](https://user-images.githubusercontent.com/5219578/190598508-5f9cf34b-7152-495c-86a4-8fdaf3f41fa3.png)
 ## Project Local Setup
@@ -61,7 +63,12 @@ The purpose of this takehome challenge is to create endpoints for a Front End te
  ___
  `POST /api/v1/customers/1/subscriptions`  
  Sending a POST request to the endpoint, will create and save a JSON response for the FE team.
- #### returns
+ #### POST returns  
+
+ ![postreq](https://user-images.githubusercontent.com/5219578/191058578-5a518f41-5388-406f-96ec-88cec1555737.png)  
+
+ ![postpostman](https://user-images.githubusercontent.com/5219578/191058858-3484e1ba-a756-4781-9303-6d91501d9e17.png)  
+
  ```json
  {
     "data": {
@@ -75,12 +82,16 @@ The purpose of this takehome challenge is to create endpoints for a Front End te
         }
     }
 }
-```
-![postman_output](https://user-images.githubusercontent.com/5219578/190593683-8037c83c-37e3-4374-b240-85184bfcaebe.png)  
+``` 
 ___
 `PATCH /api/v1/customers/1/subscriptions/1`  
 Sending a PATCH request, will update the customers subscription to either active or cancelled.
-#### returns  
+#### PATCH returns  
+
+![patchreq](https://user-images.githubusercontent.com/5219578/191058559-3989b46d-89e6-4e2e-9c8a-51e93d77c384.png)  
+
+![patchpostman](https://user-images.githubusercontent.com/5219578/191058832-75d846f4-a707-45ce-830f-901e7fadd6d0.png)  
+
 ```json
 {
     "data": {
@@ -99,7 +110,12 @@ Sending a PATCH request, will update the customers subscription to either active
 ___  
 `GET /api/v1/customers/1/subscriptions`  
  Sending a GET request to the endpoint, will return the proper JSON response. 
-#### returns  
+#### GET returns  
+
+![getreq](https://user-images.githubusercontent.com/5219578/191058542-61f50f22-748d-4a06-99f3-91774e5d3f88.png)  
+
+![getpostman](https://user-images.githubusercontent.com/5219578/191058814-3a7ea408-a2e4-4503-806b-fde9a41e9779.png)  
+
 ```json
 {
   "data": [
