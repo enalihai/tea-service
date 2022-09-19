@@ -54,6 +54,9 @@ The purpose of this takehome challenge is to create endpoints for a Front End te
 - setup the database with `rails db:{create,migrate,seed}`  
 - start your server with `rails s` it is setup to be run on `localhost:3000`  
 
+## Continuous Integration
+- I decided to use CircleCI for my project to make sure that my PR would not muddle my existing code. After each check that was green, I knew my code was good to deploy.  
+![circleCI](https://user-images.githubusercontent.com/5219578/191060583-ea4f50f5-c20c-4735-a225-b708c83a2a00.png)
 ## Endpoints  
  ___
  `POST /api/v1/customers/1/subscriptions`  
